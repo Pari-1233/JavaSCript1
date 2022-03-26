@@ -27,44 +27,45 @@ function calc()
     {
         //for addition
         case "add":
-            add(n1,n2)
+            add(n1,n2) //calling add function
            // document.getElementById('result').value = n1+n2;
             break;
         //for subtraction
         case "min":
-            min(n1,n2)
+            min(n1,n2) //calling min function
             break;
         //for multiplication
         case "mult":
-            mult(n1,n2)
+            mult(n1,n2) //calling mult function
             break;
         //for division
         case "div":            
-            //for division val1/0 && 0/val2
-            div(n1,n2)
+            
+            div(n1,n2) //calling div function
             break;
         default:
             return false;
     }
     return true;
 }
-
+//function for addition
 function add(n1,n2) {  
     document.getElementById('result').value = n1+n2; 
 
 }  
-
+//function for multiplication
 function mult(n1,n2) {  
     document.getElementById('result').value = n1*n2;
 
 
 }  
-
+//function for subtraction
 function min(n1,n2) {  
 
     document.getElementById('result').value = n1-n2;
 
 }  
+//function for division
 
 function div(n1,n2) {  
 
@@ -77,6 +78,7 @@ function div(n1,n2) {
         
     //}
     result=n1/n2;
+    //creating alert for n1/0;
     if(result=="Infinity")
     {
         document.getElementById('result').value = "";
