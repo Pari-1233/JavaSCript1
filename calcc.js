@@ -16,48 +16,77 @@ function calc()
                  else if(document.getElementById('n2').value.length==0) 
                 {
                     alert ("please enter a number in second value :");
+                    console.log('20');
                     parseFloat(document.getElementById('result').value) = '';
-                }
-                //by default its working.
-                else
-                {
-                    document.getElementById('result').value = result;
                     
                 }
+                
     //operator work//   
     switch (option)   
 
     {
         //for addition
-        case "+":
-            document.getElementById('result').value = n1+n2;
+        case "add":
+            add(n1,n2)
+           // document.getElementById('result').value = n1+n2;
             break;
         //for subtraction
-        case "-":
-            document.getElementById('result').value = n1-n2;
+        case "min":
+            min(n1,n2)
             break;
         //for multiplication
-        case "X":
-            document.getElementById('result').value = n1*n2;
+        case "mult":
+            mult(n1,n2)
             break;
         //for division
-        case "/":            
+        case "div":            
             //for division val1/0 && 0/val2
-            if ((n2 == 0) || (n1==0))
-            {
-                alert ("Sorry, you cannot divide by 0!");
-                document.getElementById('result').value = "";
-            }
-            //else divide properly.
-            else
-            {
-                document.getElementById('result').value = n1/n2;
-            }
+            div(n1,n2)
             break;
+        default:
+            return false;
     }
     return true;
 }
 
+function add(n1,n2) {  
+    document.getElementById('result').value = n1+n2; 
 
+}  
+
+function mult(n1,n2) {  
+    document.getElementById('result').value = n1*n2;
+
+
+}  
+
+function min(n1,n2) {  
+
+    document.getElementById('result').value = n1-n2;
+
+}  
+
+function div(n1,n2) {  
+
+   // try {
+        //result=n1/n2;
+        //document.getElementById('result').value = result;
+    //}
+    //catch (error) {
+        //console.log(error.message,"pari");
+        
+    //}
+    result=n1/n2;
+    if(result=="Infinity")
+    {
+        document.getElementById('result').value = "";
+        alert("cant divide by 0!");
+    }
+    else
+    {
+        document.getElementById('result').value = result;
+    }
+
+}  
                 
 
